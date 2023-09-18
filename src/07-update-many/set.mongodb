@@ -1,0 +1,36 @@
+use ("sample_training")
+
+db.zips.find({ city: 'CLEVELAND'}).count()
+
+//SET, actualiza el valor de un atributo
+//db.zips.updateMany(
+//    //Query
+//    { city: 'CLEVELAND'},
+//    {
+//        $set: {
+//            myAttr: "hola"
+//        }
+//    }
+//)
+
+//RENAME, actualiza el nombre del atributo
+//db.zips.updateMany(
+//Query
+//{ city: 'CLEVELAND'},
+//    {
+//        $rename: {
+//            myAttr: "my_data"
+//        }
+//    }
+//)
+
+//unset, elimina un atributo
+db.zips.updateMany(
+    //Query
+    { city: 'CLEVELAND'},
+    {
+        $unset: {
+            my_data: ""
+        }
+    }
+)
